@@ -606,27 +606,32 @@ ipcMain.handle('db:update-setting', (event, key, value) => {
 ipcMain.handle('db:get-sales-report', (event, filters = {}) => {
   try {
     const db = getDatabase();
-    let query = 'SELECT * FROM orders WHERE status = "completed"';
+    // Build query with explicit string literal for status
     const params = [];
+    let query = "SELECT * FROM orders WHERE status = 'completed'";
 
+    // Date filtering - handle both date strings and datetime strings
     if (filters.date_from) {
-      query += ' AND DATE(created_at) >= ?';
+      query += ' AND DATE(created_at) >= DATE(?)';
       params.push(filters.date_from);
     }
     if (filters.date_to) {
-      query += ' AND DATE(created_at) <= ?';
+      query += ' AND DATE(created_at) <= DATE(?)';
       params.push(filters.date_to);
     }
 
     query += ' ORDER BY created_at DESC';
 
-    const orders = db.prepare(query).all(...params);
+    // Execute query
+    const stmt = db.prepare(query);
+    const orders = params.length > 0 ? stmt.all(...params) : stmt.all();
     
+    // Calculate summary with proper number handling
     const summary = {
       total_orders: orders.length,
-      total_sales: orders.reduce((sum, o) => sum + (o.total || 0), 0),
-      total_tax: orders.reduce((sum, o) => sum + (o.tax || 0), 0),
-      total_subtotal: orders.reduce((sum, o) => sum + (o.subtotal || 0), 0),
+      total_sales: orders.reduce((sum, o) => sum + parseFloat(o.total || 0), 0),
+      total_tax: orders.reduce((sum, o) => sum + parseFloat(o.tax || 0), 0),
+      total_subtotal: orders.reduce((sum, o) => sum + parseFloat(o.subtotal || 0), 0),
     };
 
     return { success: true, data: { orders, summary } };

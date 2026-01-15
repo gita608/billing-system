@@ -17,8 +17,9 @@
   border-radius: 8px;
   margin-bottom: 2rem;
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   align-items: flex-end;
+  flex-wrap: wrap;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -124,13 +125,28 @@
 
 .tax-table th {
   padding: 1rem;
-  text-align: left;
   font-weight: 600;
+}
+
+.tax-table th.text-left {
+  text-align: left;
+}
+
+.tax-table th.text-right {
+  text-align: right;
 }
 
 .tax-table td {
   padding: 1rem;
   border-bottom: 1px solid #e0e0e0;
+}
+
+.tax-table td.text-left {
+  text-align: left;
+}
+
+.tax-table td.text-right {
+  text-align: right;
 }
 
 .tax-table tbody tr:hover {
@@ -160,4 +176,59 @@
   padding: 3rem;
   font-size: 1.2rem;
   color: #666;
+}
+
+.error-message {
+  background: #fee;
+  color: #c33;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #fcc;
+  font-weight: 500;
+}
+
+.btn-primary,
+.btn-export,
+.btn-print {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: #28a745;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #218838;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+}
+
+.btn-export {
+  background: #17a2b8;
+  color: white;
+}
+
+.btn-export:hover {
+  background: #138496;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(23, 162, 184, 0.3);
+}
+
+.btn-print {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-print:hover {
+  background: #5a6268;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(108, 117, 125, 0.3);
 }

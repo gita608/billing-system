@@ -36,8 +36,7 @@
     "reports": "Reports",
     "clockOut": "Clock Out",
     "items": "Items",
-    "taxReport": "Tax Report",
-    "footerNote": "Note: Don't forget to end work period."
+    "taxReport": "Tax Report"
   },
   "pos": {
     "title": "POS",

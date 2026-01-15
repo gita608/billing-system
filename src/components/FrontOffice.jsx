@@ -173,10 +173,6 @@ function FrontOffice() {
           ))}
         </div>
       </div>
-
-      <footer className="front-office-footer">
-        <p className="footer-note">{t('frontOffice.footerNote')}</p>
-      </footer>
     </div>
   );
 }
