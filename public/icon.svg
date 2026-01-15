@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a90d9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a5298;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="receiptGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0f0f0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#bgGrad)"/>
+  
+  <!-- Receipt/Bill Shape -->
+  <path d="M160 80 L352 80 L352 400 L336 380 L320 400 L304 380 L288 400 L272 380 L256 400 L240 380 L224 400 L208 380 L192 400 L176 380 L160 400 Z" 
+        fill="url(#receiptGrad)" 
+        stroke="#2a5298" 
+        stroke-width="4"/>
+  
+  <!-- Receipt Lines -->
+  <rect x="185" y="120" width="140" height="12" rx="4" fill="#4a90d9"/>
+  <rect x="185" y="150" width="100" height="8" rx="3" fill="#8892b0"/>
+  <rect x="185" y="175" width="120" height="8" rx="3" fill="#8892b0"/>
+  <rect x="185" y="200" width="80" height="8" rx="3" fill="#8892b0"/>
+  
+  <!-- Divider Line -->
+  <line x1="185" y1="230" x2="325" y2="230" stroke="#ccc" stroke-width="2" stroke-dasharray="8,4"/>
+  
+  <!-- Total Section -->
+  <rect x="185" y="250" width="60" height="10" rx="3" fill="#4a90d9"/>
+  <rect x="270" y="248" width="55" height="14" rx="3" fill="#2a5298"/>
+  
+  <!-- Barcode -->
+  <g transform="translate(195, 290)">
+    <rect x="0" y="0" width="4" height="40" fill="#333"/>
+    <rect x="8" y="0" width="2" height="40" fill="#333"/>
+    <rect x="14" y="0" width="6" height="40" fill="#333"/>
+    <rect x="24" y="0" width="2" height="40" fill="#333"/>
+    <rect x="30" y="0" width="4" height="40" fill="#333"/>
+    <rect x="38" y="0" width="2" height="40" fill="#333"/>
+    <rect x="44" y="0" width="6" height="40" fill="#333"/>
+    <rect x="54" y="0" width="4" height="40" fill="#333"/>
+    <rect x="62" y="0" width="2" height="40" fill="#333"/>
+    <rect x="68" y="0" width="4" height="40" fill="#333"/>
+    <rect x="76" y="0" width="6" height="40" fill="#333"/>
+    <rect x="86" y="0" width="2" height="40" fill="#333"/>
+    <rect x="92" y="0" width="4" height="40" fill="#333"/>
+    <rect x="100" y="0" width="2" height="40" fill="#333"/>
+    <rect x="106" y="0" width="6" height="40" fill="#333"/>
+  </g>
+  
+  <!-- Coin/Money Circle -->
+  <circle cx="380" cy="380" r="60" fill="#ffd700" stroke="#e6b800" stroke-width="4"/>
+  <text x="380" y="395" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#996600" text-anchor="middle">$</text>
+</svg>
