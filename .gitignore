@@ -30,3 +30,21 @@ Thumbs.db
 # Environment
 .env
 .env.local
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Cache
+.cache/
+.vite/
+
+# Database files (if any local test DBs)
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Backup files
+*.bak
+backups/

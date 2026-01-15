@@ -213,12 +213,12 @@ function createWindow() {
 
   // Handle window minimize
   mainWindow.on('minimize', () => {
-    console.log('Window minimized');
+    // Window minimized
   });
 
   // Handle window restore
   mainWindow.on('restore', () => {
-    console.log('Window restored');
+    // Window restored
   });
 
   // ============================================
@@ -238,7 +238,7 @@ function createWindow() {
   });
 
   mainWindow.webContents.on('responsive', () => {
-    console.log('Window became responsive again');
+    // Window became responsive again
   });
 }
 
@@ -1167,7 +1167,6 @@ function deductStockForOrder(orderId) {
  * and is ready to create browser windows
  */
 app.whenReady().then(() => {
-  console.log('Electron app ready');
   // Initialize database
   initializeDatabase();
   // Schedule automatic backups
@@ -1200,18 +1199,6 @@ app.on('will-quit', () => {
 // ============================================
 // APP-LEVEL EVENT HANDLERS
 // ============================================
-
-// Handle app will quit (before quit)
-app.on('will-quit', (event) => {
-  // Optional: Prevent quit (e.g., if unsaved data)
-  // event.preventDefault();
-  console.log('App will quit');
-});
-
-// Handle app before quit
-app.on('before-quit', () => {
-  console.log('App before quit');
-});
 
 // Handle second instance (prevent multiple instances if needed)
 const gotTheLock = app.requestSingleInstanceLock();
